@@ -21,7 +21,7 @@ var smtpTransport = nodemailer.createTransport("SMTP",{
 service: "gmail",
  auth:{
             XOAuth2: {
-                user:"shreyakakkar95@gmail.com",
+                user:"rohitchaudhary95@gmail.com",
                 clientId:"578380194099-9ek86ncop98ftui96gsinitbbu61fsnd.apps.googleusercontent.com",
                 clientSecret:"coAvIDDIabWpUUocqFdgn_v0",
                 refreshToken:"1/aOs-ESQoGKyJhDdot_dZ2zxeAw6KHTj2Z2QfcPTOQ6U"
@@ -47,6 +47,8 @@ function createToken(user){
 module.exports = function(app, express){
 
 	var api = express.Router();
+	
+	
 api.get('/mltest',function(req, res){
  var data = [ 
 
@@ -384,7 +386,7 @@ api.post('/searchSubs',function(req,res){
             console.log('hiooooooooooo');
             var verifyURL= req.protocol + "://" + req.get('host') + "/verify/" + uuid1;
             var mailOptions={
-                from:'shreyakakkar95@gmail.com',
+                from:'rohitchaudhary95@gmail.com',
                 to : req.body.email,
                 subject : "reMedi email verification",
                 text : "To verify your mail click on "+verifyURL
@@ -413,7 +415,7 @@ api.post('/confirmation',function(req,res){
     var gym_name=req.body.username;
     console.log(gym_name);
      var mailOptions={
-                from:'shreyakakkar95@gmail.com',
+                from:'rohitchaudhary95@gmail.com',
                 to : req.body.email,
                 subject : gym_name+" has confirmed your booking",
                 text : gym_name+" has confirmed your booking. See you there!"
